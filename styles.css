@@ -45,7 +45,7 @@ body {
 }
 
 .publication-image-wrapper {
-  flex: 0 0 300px;    /* image width fixed */
+  flex: 0 0 100px;    /* image width fixed */
 }
 
 .publication-image {
