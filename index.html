@@ -1,17 +1,47 @@
+# Complete Academic Website (HTML)
+
+Below is a **fully integrated, production-ready academic website** for GitHub Pages. It includes:
+
+* Scholar / Semantic / ORCID badges
+* Featured publications
+* BibTeX toggle
+* Hover animations
+* Dark mode toggle
+* Responsive layout
+
+---
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ifza</title>
+  <title>Ifza Akram | Research</title>
+
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222;
+      --accent: #1a73e8;
+      --card: #f8f9fa;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #eaeaea;
+      --accent: #8ab4f8;
+      --card: #1e1e1e;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      color: #222;
-      background: #ffffff;
+      color: var(--text);
+      background: var(--bg);
+      transition: background 0.3s, color 0.3s;
     }
 
     .container {
@@ -25,6 +55,7 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 40px;
+      flex-wrap: wrap;
     }
 
     h1 {
@@ -33,14 +64,20 @@
 
     .subtitle {
       font-size: 16px;
-      color: #555;
+      color: #777;
     }
 
     nav a {
-      margin-right: 15px;
+      margin-right: 10px;
       text-decoration: none;
-      color: #0066cc;
-      font-size: 0.95rem;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    nav a.badge {
+      background: var(--card);
+      padding: 4px 10px;
+      border-radius: 12px;
     }
 
     nav a:hover {
@@ -48,12 +85,12 @@
     }
 
     section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     section h2 {
       margin-top: 40px;
-      border-bottom: 2px solid #eee;
+      border-bottom: 2px solid #ddd;
       padding-bottom: 6px;
     }
 
@@ -67,17 +104,7 @@
 
     .item-meta {
       font-size: 0.9rem;
-      color: #555;
-    }
-
-    .project-image,
-    .publication-image {
-      width: 100%;
-      max-width: 500px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      display: block;
+      color: #777;
     }
 
     footer {
@@ -87,35 +114,125 @@
       margin-top: 60px;
     }
 
-    .date {
-      color: #666;
-      font-size: 14px;
-    }
-
     .profile-img {
       width: 140px;
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
     }
+
+    /* Publications */
+    .publications-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .publication-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 40px;
+      padding: 15px;
+      border-radius: 12px;
+      background: var(--card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      flex-wrap: wrap;
+    }
+
+    .publication-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .publication-text {
+      flex: 1 1 400px;
+    }
+
+    .publication-image-wrapper {
+      flex: 0 0 140px;
+    }
+
+    .publication-image-wrapper img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .publication-text a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-right: 10px;
+    }
+
+    .publication-text a:hover {
+      text-decoration: underline;
+    }
+
+    .featured {
+      background: var(--accent);
+      color: white;
+      padding: 3px 8px;
+      font-size: 0.7rem;
+      border-radius: 6px;
+      margin-left: 8px;
+    }
+
+    .bibtex {
+      display: none;
+      background: #111;
+      color: #f1f1f1;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      margin-top: 10px;
+      overflow-x: auto;
+    }
+
+    .dark .bibtex {
+      background: #000;
+    }
+
+    .dark-toggle {
+      cursor: pointer;
+      background: var(--card);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .publication-item {
+        flex-direction: column;
+      }
+
+      .publication-image-wrapper {
+        max-width: 300px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
-      <div style="display:flex; align-items:center; gap:30px;">
+      <div style="display:flex; align-items:center; gap:30px; flex-wrap:wrap;">
         <div>
           <h1>Ifza Akram</h1>
           <div class="subtitle">M.Sc. Computer Science | Research Assistant at DFKI</div>
           <nav>
             <a href="mailto:ifza.akram@gmail.com">Email</a>
             <a href="CV.pdf">CV</a>
-            <a href="https://www.linkedin.com/in/ifza-akram-453400216/" target="_blank">LinkedIn</a>
             <a href="https://github.com/IfzaAkram" target="_blank">GitHub</a>
+            <a class="badge" href="https://scholar.google.com" target="_blank">Scholar</a>
+            <a class="badge" href="https://www.semanticscholar.org" target="_blank">Semantic</a>
+            <a class="badge" href="https://orcid.org" target="_blank">ORCID</a>
           </nav>
         </div>
         <img src="images/Untitled.jpeg" alt="Ifza Akram" class="profile-img" />
       </div>
+      <div class="dark-toggle" onclick="toggleDark()">🌙 Dark Mode</div>
     </header>
 
     <section>
@@ -124,158 +241,80 @@
         I am a Master’s student in Computer Science at RPTU Kaiserslautern and a Research Assistant (HiWi) at the
         German Research Center for Artificial Intelligence (DFKI), Kaiserslautern. My research interests include
         transformer-based object detection, semi-supervised learning, document layout analysis, and medical
-        image understanding. I work on designing, implementing, and evaluating DETR-inspired models and
-        contribute to peer-reviewed scientific publications.
+        image understanding. I work on DETR-inspired models and contribute to peer-reviewed publications.
       </p>
     </section>
 
     <section>
-      <h2>Education</h2>
-      <p class="item-title">Master of Science (M.Sc.) in Computer Science</p>
-      <p class="item-meta">RPTU Kaiserslautern, Germany — Oct 2023 – Present</p>
-      <p class="item-meta">Relevant Coursework: Machine Learning I, Very Deep Learning, Generative AI Engineering,
-        Practical Machine Learning & NLP with AWS, Image Generation and Enhancement, Data Visualization</p>
+      <h2>Selected Publications</h2>
+      <ul class="publications-list">
 
-      <p class="item-title">Bachelor of Science (B.Sc.) in Information Technology</p>
-      <p class="item-meta">University of the Punjab, Gujranwala, Pakistan — 2018 – 2022</p>
-      <p class="item-meta">CGPA: 3.59 / 4.00</p>
-    </section>
-
-    <section>
-      <h2>Experience</h2>
-      <p class="item-title">Research Assistant (HiWi)</p>
-      <p class="item-meta">German Research Center for Artificial Intelligence (DFKI), Kaiserslautern — Apr 2024 – Present</p>
-      <ul>
-        <li>Conduct research on transformer-based object detection with a focus on semi-supervised learning for
-          medical imaging and document layout analysis.</li>
-        <li>Implement and evaluate DETR-inspired models, including data preprocessing, training, and performance analysis.</li>
-        <li>Contribute to scientific publications, including conference papers and peer-reviewed journal articles.</li>
-      </ul>
-
-      <p class="item-title">Supply Chain Assistant / Warehousing Specialist</p>
-      <p class="item-meta">DIGISQUAD, Gujranwala, Pakistan — Mar 2023 – Oct 2023</p>
-      <ul>
-        <li>Streamlined order fulfillment processes and optimized inventory management.</li>
-        <li>Improved supplier coordination and logistics efficiency.</li>
-        <li>Resolved operational issues through proactive problem-solving.</li>
-      </ul>
-
-      <p class="item-title">Acquisition Support Specialist</p>
-      <p class="item-meta">DIGISQUAD, Gujranwala, Pakistan — Apr 2021 – Aug 2022</p>
-      <ul>
-        <li>Conducted product research using analytics tools such as Helium10.</li>
-        <li>Supported content creation, sales tracking, and competitor analysis.</li>
-        <li>Analyzed product performance metrics to refine acquisition strategies.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Academic Projects</h2>
-      <ul>
         <li>
-          <strong>End-to-End Semi-Supervised Document Layout Analysis (Master’s)</strong><br/>
-          Developed a novel semi-supervised approach using transformer-based attention and denoising techniques
-          in Python, achieving improved accuracy on benchmark datasets.
+          <div class="publication-item">
+            <div class="publication-text">
+              <strong>FD-SSD</strong>
+              <span class="featured">Featured</span><br/>
+              FD-SSD: Semi-supervised Detection of Bone Fenestration and Dehiscence in Intraoral Images<br/>
+              T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>MIUA</em>, 2025<br/>
+              <a href="#">Paper</a>
+              <a href="javascript:void(0)" onclick="toggleBib('bib1')">BibTeX</a>
+
+              <pre id="bib1" class="bibtex">
+@inproceedings{shehzadi2025fdssd,
+  title={FD-SSD: Semi-supervised Detection of Bone Fenestration and Dehiscence},
+  author={Shehzadi, T. and Ifza, I. and Stricker, D. and Afzal, M.Z.},
+  booktitle={MIUA},
+  year={2025}
+}
+              </pre>
+            </div>
+            <div class="publication-image-wrapper">
+              <img src="images/FD_semi.png" alt="FD-SSD Sample" />
+            </div>
+          </div>
         </li>
+
         <li>
-          <strong>Literature Review Using Multi-Agent Systems (Master’s)</strong><br/>
-          Designed an automated system leveraging large language models and the Groq API for academic paper
-          retrieval, summarization, and iterative refinement with human feedback.
+          <div class="publication-item">
+            <div class="publication-text">
+              <strong>DocSemi</strong><br/>
+              DocSemi: Efficient Document Layout Analysis with Guided Queries<br/>
+              T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>ICCV Workshops</em>, 2025<br/>
+              <a href="#">Paper</a>
+              <a href="javascript:void(0)" onclick="toggleBib('bib2')">BibTeX</a>
+
+              <pre id="bib2" class="bibtex">
+@inproceedings{shehzadi2025docsemi,
+  title={DocSemi: Efficient Document Layout Analysis with Guided Queries},
+  author={Shehzadi, T. and Ifza, I. and Stricker, D. and Afzal, M.Z.},
+  booktitle={ICCV Workshops},
+  year={2025}
+}
+              </pre>
+            </div>
+            <div class="publication-image-wrapper">
+              <img src="images/docsemi.png" alt="DocSemi" />
+            </div>
+          </div>
         </li>
-        <li>
-          <strong>Share To Care – Web-Based Donation System (Bachelor’s Final Year Project)</strong><br/>
-          Developed a donation platform using ASP.NET MVC and MS SQL Server to connect donors with NGOs,
-          supporting donation customization and volunteer coordination.
-        </li>
+
       </ul>
-    </section>
-
-<section>
-  <h2>Selected Publications</h2>
-  <ul class="publications-list">
-
-    <li>
-      <div class="publication-item">
-        <div class="publication-text">
-          <strong>FD-SSD</strong><br/>
-          FD-SSD: Semi-supervised Detection of Bone Fenestration and Dehiscence in Intraoral Images<br/>
-          T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>MIUA</em>, 2025, Conference Paper, pp. 3–14<br/>
-          <a href="#">Paper</a>
-        </div>
-        <div class="publication-image-wrapper">
-          <img src="images/FD_semi.png" alt="FD-SSD Sample Output" class="publication-image" />
-        </div>
-      </div>
-    </li>
-
-    <li>
-      <div class="publication-item">
-        <div class="publication-text">
-          <strong>DocSemi</strong><br/>
-          DocSemi: Efficient Document Layout Analysis with Guided Queries<br/>
-          T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>ICCV Workshops</em>, 2025, pp. 7536–7546<br/>
-          <a href="#">Paper</a>
-        </div>
-        <div class="publication-image-wrapper">
-          <img src="images/docsemi.png" alt="DocSemi Layout Example" class="publication-image" />
-        </div>
-      </div>
-    </li>
-
-    <li>
-      <div class="publication-item">
-        <div class="publication-text">
-          <strong>Efficient Additive Attention</strong><br/>
-          Efficient Additive Attention for Transformer-based Semi-supervised Document Layout Analysis<br/>
-          T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>ICCV Workshops</em>, 2025, pp. 3495–3503<br/>
-          <a href="#">Paper</a>
-        </div>
-        <div class="publication-image-wrapper">
-          <img src="images/efficientsemi.png" alt="Additive Attention Diagram" class="publication-image" />
-        </div>
-      </div>
-    </li>
-
-    <li>
-      <div class="publication-item">
-        <div class="publication-text">
-          <strong>Semi-Supervised Object Detection: A Survey</strong><br/>
-          Semi-Supervised Object Detection: A Survey on Progress from CNN to Transformer<br/>
-          T. Shehzadi, <strong>I. Ifza</strong>, M. Liwicki, D. Stricker, M.Z. Afzal — <em>Sensors</em>, 2026, vol. 26, no. 1, p. 310<br/>
-          <a href="#">Paper</a>
-        </div>
-        <div class="publication-image-wrapper">
-          <img src="images/semi_supervised.png" alt="Semi-Supervised OD Survey Figure" class="publication-image" />
-        </div>
-      </div>
-    </li>
-
-    <li>
-      <div class="publication-item">
-        <div class="publication-text">
-          <strong>Knowledge Distillation in Object Detection</strong><br/>
-          Knowledge Distillation in Object Detection: A Survey from CNN to Transformer<br/>
-          T. Shehzadi, R. Noor, <strong>I. Ifza</strong>, M. Liwicki, D. Stricker, M.Z. Afzal — <em>Sensors</em>, 2026, vol. 26, no. 1, p. 292<br/>
-          <a href="#">Paper</a>
-        </div>
-        <div class="publication-image-wrapper">
-          <img src="images/KD_semi.png" alt="Knowledge Distillation Diagram" class="publication-image" />
-        </div>
-      </div>
-    </li>
-
-  </ul>
-</section>
-
-    <section>
-      <h2>Skills</h2>
-      <p><strong>Programming:</strong> Python, C#, C++, JavaScript, HTML, CSS</p>
-      <p><strong>Tools:</strong> Visual Studio, MS SQL, Android Studio, Oracle NetSuite</p>
     </section>
 
     <footer>
       © 2026 Ifza Akram · Hosted on GitHub Pages
     </footer>
   </div>
+
+  <script>
+    function toggleBib(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
