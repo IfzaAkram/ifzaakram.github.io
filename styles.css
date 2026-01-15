@@ -35,21 +35,21 @@ body {
 .publication-item {
   display: flex;
   align-items: flex-start;
-  gap: 20px;          /* space between text and image */
+  gap: 24px;          /* space between text and image */
   margin-bottom: 40px; /* space between publications */
-  flex-wrap: wrap;      /* responsive for mobile */
+  flex-wrap: wrap;      /* wraps on small screens */
 }
 
 .publication-text {
-  flex: 1 1 300px;    /* text takes available space */
+  flex: 1 1 400px;    /* text takes most space */
 }
 
 .publication-image-wrapper {
-  flex: 0 0 200px;    /* image width fixed */
+  flex: 0 0 300px;    /* image width fixed */
 }
 
 .publication-image {
-  width: 40%;
+  width: 100%;        /* fills wrapper */
   border-radius: 8px;
   display: block;
 }
