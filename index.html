@@ -11,52 +11,92 @@
       padding: 0;
       line-height: 1.6;
       color: #222;
+      background: #ffffff;
     }
+
     .container {
       max-width: 900px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 20px;
     }
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 40px;
     }
+
     h1 {
       margin-bottom: 5px;
     }
+
     .subtitle {
+      font-size: 16px;
       color: #555;
     }
+
     nav a {
       margin-right: 15px;
       text-decoration: none;
       color: #0066cc;
       font-size: 0.95rem;
     }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     section {
       margin-bottom: 40px;
     }
+
     section h2 {
+      margin-top: 40px;
       border-bottom: 2px solid #eee;
       padding-bottom: 6px;
     }
+
     ul {
       padding-left: 20px;
     }
+
     .item-title {
       font-weight: 600;
     }
+
     .item-meta {
       font-size: 0.9rem;
       color: #555;
     }
+
+    .project-image,
+    .publication-image {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      display: block;
+    }
+
     footer {
       text-align: center;
       font-size: 0.85rem;
       color: #777;
       margin-top: 60px;
+    }
+
+    .date {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -74,7 +114,7 @@
             <a href="https://github.com/IfzaAkram" target="_blank">GitHub</a>
           </nav>
         </div>
-        <img src="images/Untitled.jpeg" alt="Ifza Akram" style="width:140px;height:140px;border-radius:50%;object-fit:cover;" />
+        <img src="images/Untitled.jpeg" alt="Ifza Akram" class="profile-img" />
       </div>
     </header>
 
@@ -132,68 +172,84 @@
     <section>
       <h2>Academic Projects</h2>
       <ul>
-        <li><strong>End-to-End Semi-Supervised Document Layout Analysis (Master’s)</strong><br/>
+        <li>
+          <strong>End-to-End Semi-Supervised Document Layout Analysis (Master’s)</strong><br/>
           Developed a novel semi-supervised approach using transformer-based attention and denoising techniques
-          in Python, achieving improved accuracy on benchmark datasets.</li>
-        <li><strong>Literature Review Using Multi-Agent Systems (Master’s)</strong><br/>
+          in Python, achieving improved accuracy on benchmark datasets.
+        </li>
+        <li>
+          <strong>Literature Review Using Multi-Agent Systems (Master’s)</strong><br/>
           Designed an automated system leveraging large language models and the Groq API for academic paper
-          retrieval, summarization, and iterative refinement with human feedback.</li>
-        <li><strong>Share To Care – Web-Based Donation System (Bachelor’s Final Year Project)</strong><br/>
+          retrieval, summarization, and iterative refinement with human feedback.
+        </li>
+        <li>
+          <strong>Share To Care – Web-Based Donation System (Bachelor’s Final Year Project)</strong><br/>
           Developed a donation platform using ASP.NET MVC and MS SQL Server to connect donors with NGOs,
-          supporting donation customization and volunteer coordination.</li>
+          supporting donation customization and volunteer coordination.
+        </li>
       </ul>
     </section>
 
-<section>
-  <h2>Publications</h2>
-  <ul>
-    <li>
-      <strong>FD-SSD</strong><br/>
-      FD-SSD: Semi-supervised Detection of Bone Fenestration and Dehiscence in Intraoral Images<br/>
-      T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>Medical Image Understanding and Analysis (MIUA)</em>, 2025, Conference Paper, pp. 3–14<br/>
-      <img src="images/FD_semi.png" alt="FD-SSD Sample Output" class="project-image" /><br/>
-      <a href="#">Paper</a>
-    </li>
+    <section>
+      <h2>Selected Publications</h2>
+      <ul class="publications-list">
+        <li>
+          <div class="publication-item">
+            <strong>FD-SSD</strong><br/>
+            FD-SSD: Semi-supervised Detection of Bone Fenestration and Dehiscence in Intraoral Images<br/>
+            T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>MIUA</em>, 2025, Conference Paper, pp. 3–14<br/>
+            <img src="images/FD_semi.png" alt="FD-SSD Sample Output" class="publication-image" /><br/>
+            <a href="#">Paper</a>
+          </div>
+        </li>
 
-    <li>
-      <strong>DocSemi</strong><br/>
-      DocSemi: Efficient Document Layout Analysis with Guided Queries<br/>
-      T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>IEEE/CVF ICCV Workshops</em>, 2025, pp. 7536–7546<br/>
-      <img src="images/docsemi.png" alt="DocSemi Layout Example" class="project-image" /><br/>
-      <a href="#">Paper</a>
-    </li>
+        <li>
+          <div class="publication-item">
+            <strong>DocSemi</strong><br/>
+            DocSemi: Efficient Document Layout Analysis with Guided Queries<br/>
+            T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>ICCV Workshops</em>, 2025, pp. 7536–7546<br/>
+            <img src="images/docsemi.png" alt="DocSemi Layout Example" class="publication-image" /><br/>
+            <a href="#">Paper</a>
+          </div>
+        </li>
 
-    <li>
-      <strong>Efficient Additive Attention</strong><br/>
-      Efficient Additive Attention for Transformer-based Semi-supervised Document Layout Analysis<br/>
-      T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>IEEE/CVF ICCV Workshops</em>, 2025, pp. 3495–3503<br/>
-      <img src="images/efficientsemi.png" alt="Additive Attention Diagram" class="project-image" /><br/>
-      <a href="#">Paper</a>
-    </li>
+        <li>
+          <div class="publication-item">
+            <strong>Efficient Additive Attention</strong><br/>
+            Efficient Additive Attention for Transformer-based Semi-supervised Document Layout Analysis<br/>
+            T. Shehzadi, <strong>I. Ifza</strong>, D. Stricker, M.Z. Afzal — <em>ICCV Workshops</em>, 2025, pp. 3495–3503<br/>
+            <img src="images/efficientsemi.png" alt="Additive Attention Diagram" class="publication-image" /><br/>
+            <a href="#">Paper</a>
+          </div>
+        </li>
 
-    <li>
-      <strong>Semi-Supervised Object Detection: A Survey</strong><br/>
-      Semi-Supervised Object Detection: A Survey on Progress from CNN to Transformer<br/>
-      T. Shehzadi, <strong>I. Ifza</strong>, M. Liwicki, D. Stricker, M.Z. Afzal — <em>Sensors</em>, 2026, vol. 26, no. 1, p. 310<br/>
-      <img src="images/semi_supervised.png" alt="Semi-Supervised OD Survey Figure" class="project-image" /><br/>
-      <a href="#">Paper</a>
-    </li>
+        <li>
+          <div class="publication-item">
+            <strong>Semi-Supervised Object Detection: A Survey</strong><br/>
+            Semi-Supervised Object Detection: A Survey on Progress from CNN to Transformer<br/>
+            T. Shehzadi, <strong>I. Ifza</strong>, M. Liwicki, D. Stricker, M.Z. Afzal — <em>Sensors</em>, 2026, vol. 26, no. 1, p. 310<br/>
+            <img src="images/semi_supervised.png" alt="Semi-Supervised OD Survey Figure" class="publication-image" /><br/>
+            <a href="#">Paper</a>
+          </div>
+        </li>
 
-    <li>
-      <strong>Knowledge Distillation in Object Detection</strong><br/>
-      Knowledge Distillation in Object Detection: A Survey from CNN to Transformer<br/>
-      T. Shehzadi, R. Noor, <strong>I. Ifza</strong>, M. Liwicki, D. Stricker, M.Z. Afzal — <em>Sensors</em>, 2026, vol. 26, no. 1, p. 292<br/>
-      <img src="images/KD_semi.png" alt="Knowledge Distillation Diagram" class="project-image" /><br/>
-      <a href="#">Paper</a>
-    </li>
-  </ul>
-</section>
+        <li>
+          <div class="publication-item">
+            <strong>Knowledge Distillation in Object Detection</strong><br/>
+            Knowledge Distillation in Object Detection: A Survey from CNN to Transformer<br/>
+            T. Shehzadi, R. Noor, <strong>I. Ifza</strong>, M. Liwicki, D. Stricker, M.Z. Afzal — <em>Sensors</em>, 2026, vol. 26, no. 1, p. 292<br/>
+            <img src="images/KD_semi.png" alt="Knowledge Distillation Diagram" class="publication-image" /><br/>
+            <a href="#">Paper</a>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-<section>
-  <h2>Skills</h2>
-  <p><strong>Programming:</strong> Python, C#, C++, JavaScript, HTML, CSS</p>
-  <p><strong>Tools:</strong> Visual Studio, MS SQL, Android Studio, Oracle NetSuite</p>
-</section>
+    <section>
+      <h2>Skills</h2>
+      <p><strong>Programming:</strong> Python, C#, C++, JavaScript, HTML, CSS</p>
+      <p><strong>Tools:</strong> Visual Studio, MS SQL, Android Studio, Oracle NetSuite</p>
+    </section>
 
     <footer>
       © 2026 Ifza Akram · Hosted on GitHub Pages
