@@ -26,6 +26,12 @@ body {
     color: #1a73e8;
     text-decoration: none;
 }
+.pub-image {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 8px;
+  border-radius: 8px;
+}
 
 .links a:hover {
     text-decoration: underline;
