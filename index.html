@@ -12,6 +12,32 @@
       --accent: #1a73e8;
       --card: #f8f9fa;
     }
+    .top-nav {
+  background: var(--card);
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  font-size: 1rem; /* Increase size */
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.top-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.top-nav a:hover {
+  background: var(--accent);
+  color: white;
+}
+
 
     body.dark {
       --bg: #121212;
