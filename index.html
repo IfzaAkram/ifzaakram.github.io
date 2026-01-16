@@ -197,6 +197,49 @@
         max-width: 300px;
       }
     }
+    /* Academic Projects – per project layout */
+.project-item {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 30px;
+  padding: 18px;
+  border-radius: 12px;
+  background: var(--card);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.project-diagram {
+  flex: 0 0 180px;
+}
+
+.project-diagram img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.project-text {
+  flex: 1 1 400px;
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    flex-direction: column;
+  }
+
+  .project-diagram {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
   </style>
 </head>
 
@@ -230,14 +273,47 @@
         image understanding. I work on DETR-inspired models and contribute to peer-reviewed publications.
       </p>
     </section>
-    <section>
-      <h2>Academic Projects</h2>
-      <ul>
-        <li><strong>End-to-End Semi-Supervised Document Layout Analysis (Master’s)</strong><br/>Developed a transformer-based semi-supervised method improving benchmark performance.</li>
-        <li><strong>Literature Review Using Multi-Agent System (Master’s)</strong><br/>Built an LLM-powered pipeline for paper retrieval, summarization, and human-in-the-loop refinement.</li>
-        <li><strong>Share To Care – Web-Based Donation System (Bachelor’s)</strong><br/>Built a donation platform using ASP.NET MVC and MS SQL Server.</li>
-      </ul>
-    </section>
+<section>
+  <h2>Academic Projects</h2>
+
+  <!-- Project 1 -->
+  <div class="project-item">
+    <div class="project-diagram">
+      <img src="images/doclayout_method.png"
+           alt="Semi-Supervised Document Layout Analysis Method Diagram">
+    </div>
+    <div class="project-text">
+      <strong>End-to-End Semi-Supervised Document Layout Analysis (Master’s)</strong><br/>
+      Developed a transformer-based semi-supervised method improving benchmark performance.
+    </div>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project-item">
+    <div class="project-diagram">
+      <img src="images/multiagent_method.png"
+           alt="Multi-Agent Literature Review Pipeline">
+    </div>
+    <div class="project-text">
+      <strong>Literature Review Using Multi-Agent System (Master’s)</strong><br/>
+      Built an LLM-powered pipeline for paper retrieval, summarization, and human-in-the-loop refinement.
+    </div>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project-item">
+    <div class="project-diagram">
+      <img src="images/donation_system_method.png"
+           alt="Share To Care Web Donation System Architecture">
+    </div>
+    <div class="project-text">
+      <strong>Share To Care – Web-Based Donation System (Bachelor’s)</strong><br/>
+      Built a donation platform using ASP.NET MVC and MS SQL Server.
+    </div>
+  </div>
+
+</section>
+
 
     <section>
       <h2>Seminars</h2>
