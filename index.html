@@ -87,6 +87,15 @@
     .header-nav a:last-child {
   margin-right: 0;
 }
+    .header-img-wrapper {
+  margin-left: auto;
+}
+    .profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
     section {
       margin-bottom: 50px;
     }
@@ -316,10 +325,12 @@
             <a class="badge" href="https://www.linkedin.com/in/ifza-akram-453400216/" target="_blank">LinkedIn</a>
           </nav>
         </div>
-        <img src="images/Untitled.jpeg"
-         alt="Ifza Akram"
-         class="profile-img" />
-      </div>
+        <div class="header-img-wrapper">
+      <img src="images/Untitled.jpeg"
+           alt="Ifza Akram"
+           class="profile-img" />
+    </div>
+  </div>
       <div class="dark-toggle" onclick="toggleDark()">🌙 Dark Mode</div>
     </header>
 
