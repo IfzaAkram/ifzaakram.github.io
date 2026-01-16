@@ -239,6 +239,48 @@
     margin: 0 auto;
   }
 }
+/* Certifications */
+.cert-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  background: var(--card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.cert-item img {
+  width: 48px;
+  height: 48px;
+}
+
+.cert-item a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.cert-item a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.cert-date {
+  font-size: 0.85rem;
+  color: #777;
+}
+
 
   </style>
 </head>
@@ -407,29 +449,39 @@
   </ul>
 </section>
 <section>
-      <h2>Certifications</h2>
-      <ul>
-        <li>AWS Academy Graduate – Machine Learning Foundations (Jun 2025)</li>
-        <li>AWS Academy Graduate – Machine Learning for NLP (Oct 2025)</li>
-      </ul>
-    </section>
-<section>
   <h2>Certifications</h2>
-  <ul>
-    <li>
-      <a href="YOUR_LINK_HERE" target="_blank" rel="noopener">
-        <img src="YOUR_IMAGE_URL_HERE" alt="AWS Academy Graduate – Machine Learning Foundations Badge" style="width:40px; vertical-align:middle; margin-right:8px;">
-        AWS Academy Graduate – Machine Learning Foundations (Jun 2025)
-      </a>
+
+  <ul class="cert-list">
+
+    <!-- AWS ML Foundations -->
+    <li class="cert-item">
+      <img src="images/aws-ml-foundations.png"
+           alt="AWS Academy Graduate – Machine Learning Foundations Badge">
+      <div>
+        <a href="https://www.credly.com/badges/YOUR_BADGE_ID_HERE"
+           target="_blank" rel="noopener">
+          <strong>AWS Academy Graduate – Machine Learning Foundations</strong>
+        </a>
+        <div class="cert-date">Issued: June 2025 · Verified via Credly</div>
+      </div>
     </li>
-    <li>
-      <a href="YOUR_LINK_HERE" target="_blank" rel="noopener">
-        <img src="YOUR_IMAGE_URL_HERE" alt="AWS Academy Graduate – Machine Learning for NLP Badge" style="width:40px; vertical-align:middle; margin-right:8px;">
-        AWS Academy Graduate – Machine Learning for NLP (Oct 2025)
-      </a>
+
+    <!-- AWS ML for NLP -->
+    <li class="cert-item">
+      <img src="images/aws-ml-nlp.png"
+           alt="AWS Academy Graduate – Machine Learning for NLP Badge">
+      <div>
+        <a href="https://www.credly.com/badges/YOUR_BADGE_ID_HERE"
+           target="_blank" rel="noopener">
+          <strong>AWS Academy Graduate – Machine Learning for NLP</strong>
+        </a>
+        <div class="cert-date">Issued: October 2025 · Verified via Credly</div>
+      </div>
     </li>
+
   </ul>
 </section>
+
 <section>
     <footer>
       © 2026 Ifza Akram · Hosted on GitHub Pages
