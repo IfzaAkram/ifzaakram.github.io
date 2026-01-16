@@ -69,7 +69,24 @@
     nav a:hover {
       text-decoration: underline;
     }
-
+    .header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+    .header-left {
+  display: flex;
+  align-items: center;
+}
+    .header-nav a {
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+    .header-nav a:last-child {
+  margin-right: 0;
+}
     section {
       margin-bottom: 50px;
     }
@@ -299,7 +316,9 @@
             <a class="badge" href="https://www.linkedin.com/in/ifza-akram-453400216/" target="_blank">LinkedIn</a>
           </nav>
         </div>
-        <img src="images/Untitled.jpeg" alt="Ifza Akram" class="profile-img" />
+        <img src="images/Untitled.jpeg"
+         alt="Ifza Akram"
+         class="profile-img" />
       </div>
       <div class="dark-toggle" onclick="toggleDark()">🌙 Dark Mode</div>
     </header>
